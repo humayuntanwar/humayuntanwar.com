@@ -107,13 +107,13 @@ canvas.scene{position:absolute;inset:0;width:100%;height:100%;display:block}
 
 /* phone: the line lives in the opening; every other scene shows both languages stacked */
 @media (max-width:760px){
-  .sec:not(.hero){cursor:auto;height:auto;min-height:100svh;padding-block:56px 72px}
-  .wires-wrap .after .cap{position:absolute!important}
-  .sec:not(.hero) .before{display:none}
-  .sec:not(.hero) .after{position:relative;inset:auto;background:var(--paper)}
-  .sec:not(.hero) .after .cap{position:static;margin:0 20px 28px}
-  .sec:not(.hero) .after .cap span:empty{display:none}
-  .sec:not(.hero) .tbl{position:relative;transform:none;top:auto;left:auto;right:auto;gap:22px;padding:0 20px}
+  .sec:not(.hero):not(.wires-wrap){cursor:auto;height:auto;min-height:100svh;padding-block:56px 72px}
+  .sec:not(.hero):not(.wires-wrap) .before{display:none}
+  .sec:not(.hero):not(.wires-wrap) .after{position:relative;inset:auto;background:var(--paper)}
+  .sec:not(.hero):not(.wires-wrap) .after .cap{position:static;margin:0 20px 28px}
+  .sec:not(.hero):not(.wires-wrap) .after .cap span:empty{display:none}
+  .sec:not(.hero):not(.wires-wrap) .foot{position:static;margin:40px 20px 0}
+  .sec:not(.hero):not(.wires-wrap) .tbl{position:relative;transform:none;top:auto;left:auto;right:auto;gap:22px;padding:0 20px}
   .r{display:block;height:auto;min-height:0}
   .r>.jg{display:none}
   .mj{display:block;font-family:var(--mono);font-size:12px;font-weight:400;letter-spacing:0;line-height:1.5;color:var(--noise);margin-bottom:6px;border-left:2px solid var(--ink);padding-left:10px}
@@ -127,8 +127,6 @@ canvas.scene{position:absolute;inset:0;width:100%;height:100%;display:block}
   .before .line{font-size:clamp(14px,4.4vw,26px)}
   .wall{font-size:11px}
   .hero .cap .sm{display:none}
-  .wires-wrap{height:100svh}
-  .foot{position:absolute}
 }
 @media (prefers-reduced-motion:reduce){.wall .blink{animation:none}.hint{transition:none}html{scroll-snap-type:none}}
 </style>
@@ -338,7 +336,8 @@ canvas.scene{position:absolute;inset:0;width:100%;height:100%;display:block}
     raf = requestAnimationFrame(step);
   }
   function firstTouch(){ if (!touched) { touched = true; hint.classList.add('gone'); } cancelAnimationFrame(raf); }
-  const canDrag = (el) => !narrow() || hero.contains(el) || el === grip || grip.contains(el);
+  const wires = document.getElementById('wires');
+  const canDrag = (el) => !narrow() || hero.contains(el) || wires.contains(el) || el === grip || grip.contains(el);
 
   document.addEventListener('pointerdown', (e) => {
     if (e.target.closest('a,button:not(.grip)')) return;
@@ -374,7 +373,7 @@ canvas.scene{position:absolute;inset:0;width:100%;height:100%;display:block}
       if (x.intersectionRatio < 0.6) return;
       const i = secs.indexOf(x.target);
       dots.forEach((d, j) => d.classList.toggle('on', j === i));
-      if (narrow()) { seamEl.classList.toggle('away', x.target !== hero); return; }
+      if (narrow()) { seamEl.classList.toggle('away', x.target !== hero && x.target !== wires); if (x.target === wires && !seen.has(i) && !reduce && !drag) { seen.add(i); apply(0.94); animateTo(0.5, 1300); } return; }
       if (x.target === hero || drag) return;
       if (!seen.has(i) && !reduce) { seen.add(i); apply(0.94); animateTo(0.5, 1300); }
       else if (Math.abs(p - 0.5) > 0.08) animateTo(0.5, 700);
@@ -399,8 +398,9 @@ canvas.scene{position:absolute;inset:0;width:100%;height:100%;display:block}
   size(); window.addEventListener('resize', size);
   new IntersectionObserver((en) => { visible = en[0].isIntersecting; }).observe(cv);
   function draw(t){
-    const c = ctx, W2 = Wd, H2 = Hd, mob = W2 < 760, X = mob ? 0 : p * W2;
-    const pos = NODES.map(n => [n[1] * W2, (mob ? .2 + n[2] * .62 : n[2]) * H2]);
+    const c = ctx, W2 = Wd, H2 = Hd, mob = W2 < 760, X = p * W2;
+    const pad = mob ? 52 : 70;
+    const pos = NODES.map(n => [Math.max(pad, Math.min(W2 - pad, n[1] * W2)), (mob ? .2 + n[2] * .62 : n[2]) * H2]);
     c.save(); c.beginPath(); c.rect(0, 0, X, H2); c.clip();
     c.fillStyle = C.bg; c.fillRect(0, 0, W2, H2); c.lineWidth = 1.2;
     tangle.forEach((k, i) => {
