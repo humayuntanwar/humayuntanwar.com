@@ -105,6 +105,29 @@ canvas.scene{position:absolute;inset:0;width:100%;height:100%;display:block}
 .after .foot{justify-content:flex-end;color:var(--ink-soft)}
 .before .foot{font-family:var(--mono);color:var(--noise)}
 
+
+/* ---------- vibe ---------- */
+/* paper grain */
+.after::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;opacity:.09;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+/* live log: the jargon scrolls like tail -f */
+.wall .feed{animation:tail 120s linear infinite}
+@keyframes tail{to{transform:translateY(-50%)}}
+/* hover a row: its twin on the other side of the line lights up */
+.r>.pl,.r>.jg{transition:color .2s,transform .3s cubic-bezier(.2,.7,.2,1),text-shadow .2s}
+.r.hot>.jg{color:#fff;text-shadow:0 0 14px rgba(129,147,230,.9)}
+.r.hot>.jg .k{color:var(--noise-hi)}
+.r.hot>.pl{transform:translateX(10px)}
+.r.hot>.pl .soft{color:var(--ink)}
+/* decoding text */
+.dec{color:var(--gold)}
+/* name, set big */
+.who .tbl>.r:first-child>.pl{font-size:clamp(36px,min(8.4vh,5vw),92px);letter-spacing:-.05em}
+/* numbers, set huge and counting */
+.nums{--rh:18.5vh}
+.nums .pl .n{display:block;font-size:clamp(52px,min(11.5vh,6.6vw),128px);line-height:.88;letter-spacing:-.065em;font-weight:700}
+.nums .pl .lb{display:block;margin-top:.35em;font-size:clamp(14px,min(2.1vh,1.3vw),20px);font-weight:500;letter-spacing:0;color:var(--ink-soft)}
+.nums .jg{font-size:clamp(14px,min(2.3vh,1.4vw),22px)}
+
 /* phone: the line lives in the opening; every other scene shows both languages stacked */
 @media (max-width:760px){
   .sec:not(.hero):not(.wires-wrap){cursor:auto;height:auto;min-height:100svh;padding-block:56px 72px}
@@ -119,6 +142,8 @@ canvas.scene{position:absolute;inset:0;width:100%;height:100%;display:block}
   .mj{display:block;font-family:var(--mono);font-size:12px;font-weight:400;letter-spacing:0;line-height:1.5;color:var(--noise);margin-bottom:6px;border-left:2px solid var(--ink);padding-left:10px}
   .r>.pl{padding:0;font-size:clamp(26px,8vw,40px)}
   .proj .r>.pl{font-size:22px}
+  .nums .pl .n{font-size:72px}
+  .who .tbl>.r:first-child>.pl{font-size:44px}
   .seam.away{opacity:0}
   .seam.away .grip{pointer-events:none}
   .dots{display:none}
@@ -128,7 +153,7 @@ canvas.scene{position:absolute;inset:0;width:100%;height:100%;display:block}
   .wall{font-size:11px}
   .hero .cap .sm{display:none}
 }
-@media (prefers-reduced-motion:reduce){.wall .blink{animation:none}.hint{transition:none}html{scroll-snap-type:none}}
+@media (prefers-reduced-motion:reduce){.wall .blink,.wall .feed{animation:none}.hint{transition:none}html{scroll-snap-type:none}}
 </style>
 </head>
 <body>
@@ -217,10 +242,10 @@ canvas.scene{position:absolute;inset:0;width:100%;height:100%;display:block}
   <div class="layer after">
     <div class="gx cap"><span></span><span>05 · NUMBERS</span></div>
     <div class="tbl gx">
-      <div class="r"><div></div><div class="pl"><span class="mj">integrations.live ≥ 400</span><span><span class="n">400+</span> <span class="soft">integrations live.</span></span></div></div>
-      <div class="r"><div></div><div class="pl"><span class="mj">auth_success_rate Δ +11%</span><span><span class="n">+11%</span> <span class="soft">more payments approved.</span></span></div></div>
-      <div class="r"><div></div><div class="pl"><span class="mj">revenue_aed = 2,000,000</span><span><span class="n">2M AED</span> <span class="soft">from BNPL.</span></span></div></div>
-      <div class="r"><div></div><div class="pl"><span class="mj">outlets.onboarded ≥ 1,000</span><span><span class="n">1,000+</span> <span class="soft">outlets onboarded.</span></span></div></div>
+      <div class="r"><div></div><div class="pl"><span class="mj">integrations.live ≥ 400</span><span class="n" data-to="400" data-suf="+">400+</span><span class="lb">integrations designed and taken live</span></div></div>
+      <div class="r"><div></div><div class="pl"><span class="mj">auth_success_rate Δ +11%</span><span class="n" data-to="11" data-pre="+" data-suf="%">+11%</span><span class="lb">more payments approved, found in the data</span></div></div>
+      <div class="r"><div></div><div class="pl"><span class="mj">revenue_aed = 2,000,000</span><span class="n" data-to="2" data-suf="M">2M</span><span class="lb">AED in new revenue from BNPL</span></div></div>
+      <div class="r"><div></div><div class="pl"><span class="mj">outlets.onboarded ≥ 1,000</span><span class="n" data-to="1000" data-suf="+">1,000+</span><span class="lb">outlets onboarded through a framework I built</span></div></div>
     </div>
   </div>
   <div class="layer before" aria-hidden="true">
@@ -322,7 +347,9 @@ canvas.scene{position:absolute;inset:0;width:100%;height:100%;display:block}
       if (r < .02) s.className += ' blink';
       f.append(s);
     }
-    wall.append(f);
+    const feed = document.createElement('div'); feed.className = 'feed';
+    feed.append(f); feed.append(...[...feed.childNodes].map((n) => n.cloneNode(true)));
+    wall.append(feed);
   });
 
   // the line
@@ -364,6 +391,51 @@ canvas.scene{position:absolute;inset:0;width:100%;height:100%;display:block}
     if (k in map) { e.preventDefault(); firstTouch(); apply(map[k]); }
   });
 
+
+  // decode: plain text scrambles out of jargon as the line crosses it
+  const GL = '0123456789ABCDEF$#%&*+=/<>_[]{}';
+  function decode(el, delay){
+    const nodes = [];
+    (function walk(n){ if (n.nodeType === 3 && n.nodeValue.trim()) nodes.push([n, n.nodeValue]); else if (n.nodeType === 1 && !n.classList.contains('mj') && !n.hasAttribute('data-to')) n.childNodes.forEach(walk); })(el);
+    if (!nodes.length) return;
+    el.classList.add('dec');
+    const start = performance.now() + delay, dur = 650;
+    (function frame(now){
+      const k = Math.max(0, Math.min(1, (now - start) / dur));
+      nodes.forEach(([n, t]) => {
+        const keep = Math.floor(t.length * k);
+        n.nodeValue = t.slice(0, keep) + t.slice(keep).replace(/\S/g, () => GL[Math.floor(Math.random() * GL.length)]);
+      });
+      if (k < 1) requestAnimationFrame(frame); else el.classList.remove('dec');
+    })(performance.now());
+  }
+  function countUp(el, delay){
+    const to = +el.dataset.to, pre = el.dataset.pre || '', suf = el.dataset.suf || '', start = performance.now() + delay, dur = 1300;
+    (function frame(now){
+      const k = Math.max(0, Math.min(1, (now - start) / dur)), e = 1 - Math.pow(1 - k, 4);
+      el.textContent = pre + Math.round(to * e).toLocaleString('en-US') + suf;
+      if (k < 1) requestAnimationFrame(frame);
+    })(performance.now());
+  }
+  const played = new Set();
+  function play(sec){
+    if (played.has(sec) || reduce) return; played.add(sec);
+    sec.querySelectorAll('.after .tbl .pl').forEach((el, i) => decode(el, 250 + i * 110));
+    sec.querySelectorAll('[data-to]').forEach((el, i) => countUp(el, 200 + i * 140));
+  }
+  // hover a row: light up its twin on the other side of the line
+  document.querySelectorAll('.sec').forEach((sec) => {
+    const sets = [...sec.querySelectorAll('.tbl')].map((t) => [...t.children].filter((c) => c.classList.contains('r')));
+    if (sets.length < 2) return;
+    const clear = () => sets.flat().forEach((r) => r.classList.remove('hot'));
+    sec.addEventListener('pointerover', (e) => {
+      const r = e.target.closest('.r'); clear(); if (!r) return;
+      const i = sets.map((set) => set.indexOf(r)).find((x) => x > -1);
+      if (i > -1) sets.forEach((set) => set[i] && set[i].classList.add('hot'));
+    });
+    sec.addEventListener('pointerleave', clear);
+  });
+
   // each scene: on arrival the line sweeps from the jargon side and settles in the middle
   const secs = [...document.querySelectorAll('.sec')];
   const dots = [...document.querySelectorAll('.dots a')];
@@ -373,6 +445,7 @@ canvas.scene{position:absolute;inset:0;width:100%;height:100%;display:block}
       if (x.intersectionRatio < 0.6) return;
       const i = secs.indexOf(x.target);
       dots.forEach((d, j) => d.classList.toggle('on', j === i));
+      play(x.target);
       if (narrow()) { seamEl.classList.toggle('away', x.target !== hero && x.target !== wires); if (x.target === wires && !seen.has(i) && !reduce && !drag) { seen.add(i); apply(0.94); animateTo(0.5, 1300); } return; }
       if (x.target === hero || drag) return;
       if (!seen.has(i) && !reduce) { seen.add(i); apply(0.94); animateTo(0.5, 1300); }
