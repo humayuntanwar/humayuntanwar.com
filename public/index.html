@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Humayun Tanwar</title>
-<meta name="description" content="Humayun Tanwar, solutions engineer in payments, based in Dubai. Experience, achievements and projects.">
+<meta name="description" content="Humayun Tanwar, Integration Team Lead EMEA at NomuPay. 8+ years in payments, based in Dubai.">
 <meta property="og:title" content="Humayun Tanwar">
-<meta property="og:description" content="Solutions engineer in payments. Customers pay. Money arrives. Nobody panics.">
+<meta property="og:description" content="Integration Team Lead, EMEA at NomuPay. Customers pay. Money arrives. Nobody panics.">
 <meta property="og:url" content="https://humayuntanwar.com">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@humayun_x">
@@ -15,31 +15,32 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter+Tight:wght@400;500;600;700&display=swap">
 <style>
-/* One line runs down the whole site. In the opening scene it is draggable: left is payments as engineers live it, right is what everyone else gets.
-   Below, the same line becomes the border between a dark column of machine labels and the plain-English content. */
+/* One line runs the length of the site. In the opening it is draggable; as you scroll it glides to 30% and becomes the spine.
+   Every row below has two sides: left of the line, how a machine would log it; right of the line, what it means. */
 :root{
-  --p:.5;
-  --noise-bg:#0A0F24; --noise:#3A4A8F; --noise-hi:#8193E6; --amber:#FFB020; --red:#FF5C4D; --code:#E9ECFA;
+  --p:.5; --spine:30vw;
+  --noise-bg:#0A0F24; --noise:#3A4A8F; --noise-hi:#8193E6; --amber:#FFB020; --red:#FF5C4D; --green:#5FD39A; --code:#E9ECFA;
   --paper:#F6F5F1; --ink:#121212; --ink-soft:#5E5B55; --rule:#DAD7CF; --gold:#9A6C17;
   --mono:'IBM Plex Mono', ui-monospace, Menlo, monospace;
   --sans:'Inter Tight', system-ui, -apple-system, 'Segoe UI', sans-serif;
   color-scheme:light;
 }
 *{box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit}
 :focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 
-/* ---------- opening scene ---------- */
-.sec{position:relative;height:100vh;height:100svh;min-height:600px;overflow:hidden;touch-action:pan-y;cursor:ew-resize;user-select:none;-webkit-user-select:none}
+/* ---------- opening ---------- */
+.hero{position:relative;height:100vh;height:100svh;min-height:600px;overflow:hidden;touch-action:pan-y;cursor:ew-resize;user-select:none;-webkit-user-select:none}
 .layer{position:absolute;inset:0}
-.after{background:var(--paper);color:var(--ink)}
+.after{background:var(--paper)}
 .before{background:var(--noise-bg);color:var(--code);clip-path:inset(0 calc((1 - var(--p)) * 100%) 0 0)}
 .gutter{position:absolute;left:max(20px, 4vw, env(safe-area-inset-left, 0px));right:max(20px, 4vw, env(safe-area-inset-right, 0px))}
 .cap{top:max(26px, env(safe-area-inset-top, 0px));display:flex;justify-content:space-between;gap:16px;align-items:baseline}
-.after .cap{font-family:var(--sans);font-size:clamp(22px,2.4vw,32px)}
-.after .cap .sm{font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--ink-soft)}
-.before .cap{font-family:var(--mono);font-size:12.5px;letter-spacing:.03em;color:var(--noise-hi)}
+.after .cap{font-weight:600;font-size:clamp(20px,2vw,26px);letter-spacing:-.01em}
+.after .cap .sm{font-size:12px;letter-spacing:.12em;color:var(--ink-soft)}
+.before .cap{font-family:var(--mono);font-size:12.5px;color:var(--noise-hi)}
 .before .cap span{background:var(--noise-bg);padding:6px 10px;box-shadow:0 0 0 1px var(--noise)}
 .wall{position:absolute;inset:-8px;padding:10px;font-family:var(--mono);font-size:13px;line-height:1.55;color:var(--noise);word-break:break-all;overflow:hidden}
 .wall span{margin-right:.8em}
@@ -48,116 +49,90 @@ a{color:inherit}
 @keyframes blink{50%{opacity:.15}}
 .lines{top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:clamp(6px,1.4vh,18px)}
 .line{height:clamp(60px,15vh,168px);display:flex;align-items:center;white-space:nowrap}
-.after .line{font-family:var(--sans);font-size:clamp(56px,min(16vh,11.5vw),178px);line-height:1;letter-spacing:-.01em}
-.after .line i{font-style:italic}
+.after .line{font-weight:600;font-size:clamp(52px,min(15vh,11vw),168px);line-height:1;letter-spacing:-.045em}
+.after .line.soft{color:var(--ink-soft)}
 .before .line{font-family:var(--mono);font-weight:600;font-size:clamp(20px,min(6.6vh,4.4vw),70px);letter-spacing:-.02em;text-shadow:0 0 24px var(--noise-bg),0 0 8px var(--noise-bg)}
 .before .line b{font-weight:600;padding:.08em .28em;margin-right:.3em;text-shadow:none}
 .e{background:var(--red);color:var(--noise-bg)} .w{background:var(--amber);color:var(--noise-bg)} .i{background:var(--noise-hi);color:var(--noise-bg)}
-.scroll{position:absolute;left:50%;bottom:max(22px, env(safe-area-inset-bottom, 0px));transform:translateX(-50%);font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--ink-soft);background:var(--paper);padding:4px 8px;text-decoration:none}
+.scroll{position:absolute;right:max(20px, 4vw);bottom:max(24px, env(safe-area-inset-bottom, 0px));font-size:12px;font-weight:600;letter-spacing:.14em;color:var(--ink-soft);text-decoration:none;display:inline-flex;align-items:center;min-height:44px}
 
-.seam{position:fixed;top:0;bottom:0;left:calc(var(--p) * 100vw);width:0;z-index:20;pointer-events:none;transition:opacity .3s}
-.seam.off{opacity:0}
-.seam.off .grip{pointer-events:none}
-.seam::before{content:"";position:absolute;top:0;bottom:0;left:-1px;width:2px;background:var(--ink);box-shadow:0 0 0 1px rgba(246,245,241,.4)}
-.tag{position:absolute;left:10px;top:max(90px, 13vh);writing-mode:vertical-rl;font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.32em;color:var(--ink);background:var(--paper);padding:12px 5px;white-space:nowrap}
-.grip{position:absolute;left:0;top:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:var(--ink);color:var(--paper);display:grid;place-items:center;pointer-events:auto;cursor:ew-resize;border:0;box-shadow:0 10px 30px rgba(0,0,0,.35);touch-action:none}
+/* ---------- the line ---------- */
+.seam{position:fixed;top:0;bottom:0;left:calc(var(--p) * 100vw);width:0;z-index:20;pointer-events:none}
+.seam::before{content:"";position:absolute;top:0;bottom:0;left:-1px;width:2px;background:var(--ink);box-shadow:0 0 0 1px rgba(246,245,241,.35)}
+.tag{position:absolute;left:10px;top:max(90px, 13vh);writing-mode:vertical-rl;font-size:11px;font-weight:600;letter-spacing:.32em;color:var(--ink);background:var(--paper);padding:12px 5px;white-space:nowrap;transition:opacity .25s}
+.grip{position:absolute;left:0;top:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:var(--ink);color:var(--paper);display:grid;place-items:center;pointer-events:auto;cursor:ew-resize;border:0;box-shadow:0 10px 30px rgba(0,0,0,.35);touch-action:none;transition:opacity .25s}
 .grip svg{width:26px;height:26px}
 .grip:focus-visible{outline:3px solid var(--amber);outline-offset:4px}
-.hint{position:absolute;left:0;top:calc(50% + 46px);transform:translateX(-50%);font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--ink);background:var(--paper);padding:4px 8px;white-space:nowrap;transition:opacity .6s}
+.hint{position:absolute;left:0;top:calc(50% + 46px);transform:translateX(-50%);font-size:11px;font-weight:600;letter-spacing:.14em;color:var(--ink);background:var(--paper);padding:4px 8px;white-space:nowrap;transition:opacity .6s}
 .hint.gone{opacity:0}
+.seam.docked .grip,.seam.docked .hint,.seam.docked .tag{opacity:0;pointer-events:none}
 
-/* ---------- content: dark label column | the line | paper ---------- */
-.block{display:grid;grid-template-columns:minmax(0,27fr) minmax(0,73fr);border-top:2px solid var(--ink)}
-.label{background:var(--noise-bg);color:var(--noise-hi);font-family:var(--mono);font-size:12.5px;line-height:1.7;padding-block:56px;padding-left:max(20px, 4vw, env(safe-area-inset-left, 0px));padding-right:24px;border-right:2px solid var(--ink)}
-.label .sticky{position:sticky;top:32px;display:flex;flex-direction:column;gap:6px}
-.label .cmd{color:var(--code)}
-.label .ok{color:#5FD39A}
-.label .dim{color:var(--noise)}
-.body{padding-block:56px 64px;padding-left:clamp(24px,5vw,72px);padding-right:max(20px, 4vw, env(safe-area-inset-right, 0px));min-width:0}
-.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 14px}
-h2{margin:0 0 28px;font-family:var(--sans);font-weight:400;font-size:clamp(40px,5vw,68px);line-height:1;letter-spacing:-.01em;text-wrap:balance}
-h2 i{font-style:italic}
-.lede{margin:0;max-width:34ch;font-family:var(--sans);font-size:clamp(24px,2.5vw,32px);line-height:1.3;text-wrap:pretty}
-.facts{display:flex;flex-wrap:wrap;gap:10px;margin:32px 0 0;padding:0;list-style:none}
-.facts li{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border:1px solid var(--rule);border-radius:999px;font-size:14px;font-weight:500;background:#fff}
-.facts svg{width:15px;height:15px;flex:none}
+/* ---------- two-sided rows ---------- */
+.row{display:grid;grid-template-columns:var(--spine) minmax(0,1fr)}
+.m{background:var(--noise-bg);color:var(--noise-hi);font-family:var(--mono);font-size:13px;line-height:1.75;padding:28px 32px 28px max(20px, 4vw, env(safe-area-inset-left, 0px));min-width:0;overflow-wrap:anywhere;white-space:pre-wrap}
+.m .c{color:var(--code)} .m .k{color:var(--noise)} .m .ok{color:var(--green)} .m .a{color:var(--amber)} .m .r{color:var(--red)}
+.m p{margin:0}
+.h{padding:28px max(20px, 4vw, env(safe-area-inset-right, 0px)) 28px clamp(28px,4.5vw,72px);min-width:0}
+.row.sub .m{border-top:1px solid #1A2142}
+.row.sub .h{border-top:1px solid var(--rule)}
+
+/* section heads */
+.row.head .m,.row.head .h{padding-top:104px;padding-bottom:20px}
+.row.head .m{font-size:12px;letter-spacing:.06em;color:var(--noise)}
+.row.head .m b{display:block;color:var(--code);font-weight:500;font-size:13px;letter-spacing:0}
+.eyebrow{margin:0 0 10px;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
+h2{margin:0;font-weight:600;font-size:clamp(40px,5vw,72px);line-height:1;letter-spacing:-.04em;text-wrap:balance}
+h2 span{color:var(--ink-soft)}
+
+/* about */
+.lede{margin:0;max-width:30ch;font-size:clamp(24px,2.6vw,34px);line-height:1.25;letter-spacing:-.02em;font-weight:500;text-wrap:pretty}
+.meta{margin:22px 0 0;color:var(--ink-soft);font-size:16px}
+.meta b{color:var(--ink);font-weight:600}
 
 /* experience */
-.jobs{display:flex;flex-direction:column}
-.job{display:grid;grid-template-columns:minmax(0,15fr) minmax(0,40fr);gap:32px;padding:28px 0;border-top:1px solid var(--rule)}
-.job:first-child{border-top:0;padding-top:4px}
-.when{font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;color:var(--ink-soft);padding-top:8px}
-.when b{display:block;font-weight:600;color:var(--ink);letter-spacing:.1em}
-.job h3{margin:0;font-family:var(--sans);font-weight:400;font-size:clamp(28px,2.8vw,38px);line-height:1.1}
-.job .role{margin:6px 0 14px;font-weight:600;font-size:15px}
-.job .role span{font-weight:400;color:var(--ink-soft)}
-.job p{margin:0 0 12px;max-width:62ch;color:#2A2A2A}
-.job ul{margin:0;padding-left:1.1em;max-width:62ch}
-.job li{margin:6px 0}
+.job h3{margin:0;font-weight:600;font-size:clamp(26px,2.6vw,34px);letter-spacing:-.025em;line-height:1.15}
+.job .role{margin:4px 0 2px;font-weight:600;font-size:16px}
+.job .where{margin:0 0 14px;font-size:14px;color:var(--ink-soft)}
+.job ul{margin:0;padding-left:1.1em;max-width:64ch}
+.job li{margin:7px 0}
 .job li::marker{color:var(--gold)}
 
-/* achievements */
-.wins{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;border-top:1px solid var(--rule)}
-.win{padding:28px 28px 30px 0;border-bottom:1px solid var(--rule)}
-.win:nth-child(even){padding-left:28px;border-left:1px solid var(--rule)}
-.num{display:block;font-family:var(--sans);font-size:clamp(56px,6vw,88px);line-height:.95;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
-.num.word{font-style:italic}
-.win p{margin:12px 0 0;max-width:36ch;color:#2A2A2A}
+/* numbers */
+.stat{display:flex;align-items:baseline;gap:22px;flex-wrap:wrap}
+.stat .n{font-weight:600;font-size:clamp(48px,6vw,88px);line-height:1;letter-spacing:-.05em;font-variant-numeric:tabular-nums;min-width:3.4ch}
+.stat p{margin:0;max-width:40ch;font-size:18px;line-height:1.45}
 
 /* projects */
-.projects{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-.proj{display:flex;flex-direction:column;gap:12px;padding:24px;background:#fff;border:1px solid var(--rule);border-radius:4px;text-decoration:none;color:inherit;transition:border-color .2s,transform .2s}
-.proj:hover{border-color:var(--ink);transform:translateY(-2px)}
-.proj .top{display:flex;justify-content:space-between;align-items:center;gap:12px}
-.proj .repo{font-family:var(--mono);font-size:13.5px;font-weight:600;letter-spacing:-.01em;overflow-wrap:anywhere}
-.proj .kind{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:999px;white-space:nowrap}
-.k-ai{background:#ECEFFF;color:#2A3AA8} .k-pay{background:#FFF1D6;color:#7A4F00} .k-infra{background:#E5F4EC;color:#14633C}
-.proj h3{margin:0;font-family:var(--sans);font-weight:400;font-size:26px;line-height:1.15}
-.proj p{margin:0;color:#3A3A3A;font-size:15.5px}
-.proj .find{margin-top:auto;padding-top:12px;border-top:1px dashed var(--rule);font-size:14.5px;color:var(--ink)}
-.proj .find b{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--gold);font-weight:600;margin-right:6px}
-.more{display:inline-flex;align-items:center;gap:8px;margin-top:24px;min-height:44px;font-family:var(--mono);font-size:13px;font-weight:500;text-underline-offset:5px}
+.proj{display:block;text-decoration:none}
+.proj .t{display:flex;align-items:baseline;justify-content:space-between;gap:16px}
+.proj h3{margin:0;font-weight:600;font-size:clamp(22px,2.1vw,28px);letter-spacing:-.02em;line-height:1.2}
+.proj .go{flex:none;font-size:14px;font-weight:600;color:var(--ink-soft)}
+.proj:hover h3{text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:2px}
+.proj:hover .go{color:var(--ink)}
+.proj p{margin:8px 0 0;max-width:62ch;color:#2E2E2E}
 
 /* contact */
-.contact h2{font-size:clamp(56px,8vw,120px)}
-.links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;border-top:1px solid var(--rule);max-width:820px}
-.links a,.links div{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:72px;padding:0 4px;border-bottom:1px solid var(--rule);text-decoration:none}
-.links a:nth-child(odd),.links div:nth-child(odd){padding-right:24px}
-.links a:nth-child(even),.links div:nth-child(even){padding-left:24px;border-left:1px solid var(--rule)}
-.links .k{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
-.links .v{font-family:var(--sans);font-size:24px;text-align:right}
+.links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:32px;max-width:760px}
+.links a,.links div{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:64px;border-bottom:1px solid var(--rule);text-decoration:none}
+.links .k{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+.links .v{font-weight:500;font-size:19px}
 .links a:hover .v{text-decoration:underline;text-underline-offset:4px}
-footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-block:22px max(26px, env(safe-area-inset-bottom, 0px));padding-left:max(20px, 4vw, env(safe-area-inset-left, 0px));padding-right:max(20px, 4vw, env(safe-area-inset-right, 0px));background:var(--noise-bg);color:var(--noise-hi);font-family:var(--mono);font-size:11.5px;letter-spacing:.06em}
-
-
-/* uniform type: Inter Tight for everything on the paper side, mono only in the dark terminal column */
-.after .line{font-weight:600;letter-spacing:-.04em}
-.after .cap{font-weight:600;letter-spacing:-.01em}
-h2{font-weight:600;letter-spacing:-.035em}
-h2 i,.after .line i{font-style:normal;color:var(--ink-soft)}
-.lede{font-weight:400;letter-spacing:-.01em}
-.job h3,.proj h3{font-weight:600;letter-spacing:-.02em}
-.num{font-weight:600;letter-spacing:-.04em}
-.num.word{font-style:normal}
-.links .v{font-weight:500;font-size:20px}
-.eyebrow,.when,.proj .repo,.proj .kind,.proj .find b,.links .k,.more,.after .cap .sm,.scroll,.tag,.hint{font-family:var(--sans)}
-.eyebrow,.links .k,.after .cap .sm,.proj .find b,.proj .kind,.scroll,.hint,.tag{font-weight:600}
-.when{font-size:13px;letter-spacing:.02em}
-.proj .repo{font-size:14px;color:var(--ink-soft);font-weight:500}
-.edu{margin-top:8px;padding-top:24px;border-top:1px solid var(--rule)}
+.end .m,.end .h{padding-bottom:120px}
+footer{display:grid;grid-template-columns:var(--spine) minmax(0,1fr);font-size:12px;letter-spacing:.06em}
+footer span{padding:22px max(20px, 4vw) max(26px, env(safe-area-inset-bottom, 0px))}
+footer span:first-child{background:var(--noise-bg);color:var(--noise-hi);font-family:var(--mono)}
+footer span:last-child{color:var(--ink-soft);text-align:right;border-top:1px solid var(--rule)}
 
 @media (max-width:860px){
-  .block{grid-template-columns:minmax(0,1fr)}
-  .label{border-right:0;border-bottom:2px solid var(--ink);padding-block:18px;padding-right:max(20px, 4vw, env(safe-area-inset-right, 0px))}
-  .label .sticky{position:static;flex-direction:row;flex-wrap:wrap;gap:4px 14px}
-  .label .opt{display:none}
-  .body{padding-block:36px 48px;padding-left:max(20px, 4vw, env(safe-area-inset-left, 0px))}
-  .job{grid-template-columns:minmax(0,1fr);gap:10px}
-  .when{padding-top:0}
-  .when b{display:inline;margin-right:8px}
-  .wins,.projects,.links{grid-template-columns:minmax(0,1fr)}
-  .win,.win:nth-child(even){padding:22px 0;border-left:0}
-  .links a,.links div,.links a:nth-child(even),.links div:nth-child(even),.links a:nth-child(odd),.links div:nth-child(odd){padding:0 2px;border-left:0}
+  :root{--spine:100vw}
+  .row,footer{grid-template-columns:minmax(0,1fr)}
+  .m{padding:12px max(20px, 4vw) 12px max(20px, 4vw, env(safe-area-inset-left, 0px));font-size:12px;line-height:1.6}
+  .h{padding:22px max(20px, 4vw, env(safe-area-inset-right, 0px)) 30px max(20px, 4vw, env(safe-area-inset-left, 0px))}
+  .row.head .m{padding-top:64px;padding-bottom:12px}
+  .row.head .h{padding-top:26px;padding-bottom:4px}
+  .seam.docked{opacity:0}
+  .links{grid-template-columns:minmax(0,1fr)}
+  footer span:last-child{text-align:left}
 }
 @media (max-width:700px){
   .grip{width:54px;height:54px;top:62%}
@@ -169,21 +144,20 @@ h2 i,.after .line i{font-style:normal;color:var(--ink-soft)}
   .wall{font-size:11px}
   .cap .sm{display:none}
 }
-@media (prefers-reduced-motion:reduce){.wall .blink{animation:none}.hint,.seam,.proj{transition:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.wall .blink{animation:none}.hint,.grip,.tag{transition:none}}
 </style>
 </head>
 <body>
 
-<!-- OPENING: the line -->
-<section class="sec" id="top" aria-label="Humayun Tanwar, solutions engineer in payments">
+<section class="hero" id="top" aria-label="Humayun Tanwar">
   <div class="layer after">
-    <div class="gutter cap"><span class="sm">SOLUTIONS ENGINEER · PAYMENTS · DUBAI</span><span>Humayun Tanwar</span></div>
+    <div class="gutter cap"><span class="sm">INTEGRATION TEAM LEAD · PAYMENTS · DUBAI</span><span>Humayun Tanwar</span></div>
     <div class="gutter lines">
       <div class="line">Customers pay.</div>
-      <div class="line"><i>Money arrives.</i></div>
+      <div class="line soft">Money arrives.</div>
       <div class="line">Nobody panics.</div>
     </div>
-    <a class="scroll" href="#about">SCROLL</a>
+    <a class="scroll" href="#about">SCROLL ↓</a>
   </div>
   <div class="layer before" aria-hidden="true">
     <div class="wall" data-wall="1400"></div>
@@ -205,171 +179,156 @@ h2 i,.after .line i{font-style:normal;color:var(--ink-soft)}
 </div>
 
 <main>
+
 <!-- ABOUT -->
-<section class="block" id="about" aria-labelledby="about-h">
-  <div class="label" aria-hidden="true"><div class="sticky">
-    <span class="cmd">$ whoami</span>
-    <span>humayun.tanwar</span>
-    <span class="opt dim">role=solutions_engineer</span>
-    <span class="opt dim">domain=payments</span>
-    <span class="opt dim">tz=Asia/Dubai</span>
-    <span class="ok">200 OK</span>
-  </div></div>
-  <div class="body">
-    <p class="eyebrow">About</p>
-    <h2 id="about-h">The person <i>in the middle.</i></h2>
-    <p class="lede">I'm a solutions engineer in payments. I work between banks, merchants and engineers, scoping integrations and taking merchants live, so the deal and the integration land together.</p>
-    <ul class="facts">
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Dubai, UAE</li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>In payments since 2018</li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M12 4l8 8-8 8"/></svg>Solutions Engineer at NomuPay</li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 9l-4 3 4 3M16 9l4 3-4 3M13.5 6l-3 12"/></svg>Software engineer by training</li>
-    </ul>
+<div class="row head" id="about">
+  <div class="m" aria-hidden="true"><b>$ whoami</b>01 / about</div>
+  <div class="h"><p class="eyebrow">About</p><h2>The person <span>in the middle.</span></h2></div>
+</div>
+<div class="row">
+  <div class="m" aria-hidden="true"><p><span class="k">name</span>     <span class="c">humayun.tanwar</span></p><p><span class="k">role</span>     integration_team_lead</p><p><span class="k">region</span>   EMEA</p><p><span class="k">company</span>  nomupay</p><p><span class="k">tz</span>       Asia/Dubai</p><p><span class="k">since</span>    2018</p><p class="ok">200 OK</p></div>
+  <div class="h">
+    <p class="lede">I lead integrations for EMEA at NomuPay. For 8+ years I've worked between merchants, banks and engineers, turning what each side needs into payments that go live and stay live.</p>
+    <p class="meta"><b>Dubai, UAE</b> · Payments since 2018 · Software engineer by training</p>
   </div>
-</section>
+</div>
 
 <!-- EXPERIENCE -->
-<section class="block" id="experience" aria-labelledby="exp-h">
-  <div class="label" aria-hidden="true"><div class="sticky">
-    <span class="cmd">$ git log --career</span>
-    <span>* 2022 total_processing → nomupay</span>
-    <span>* 2020 magnati</span>
-    <span>* 2018 access_group</span>
-    <span class="opt dim">3 commits, 0 reverts</span>
-  </div></div>
-  <div class="body">
-    <p class="eyebrow">Experience</p>
-    <h2 id="exp-h">Where I've <i>worked.</i></h2>
-    <div class="jobs">
-      <article class="job">
-        <div class="when"><b>MAY 2022 – NOW</b>Dubai, UAE</div>
-        <div>
-          <h3>Total Processing, now NomuPay</h3>
-          <p class="role">Solutions Engineer, UK &amp; UAE lead <span>· joined as Product &amp; Integration Lead, MENA</span></p>
-          <p>Total Processing, a UK payment service provider, became part of NomuPay in 2023. I work with UK and European clients: trading firms, merchants, payment partners and banks.</p>
-          <ul>
-            <li>Launched open banking as a payment method in the UK and EU and took it live with 20 merchants: onboarding them with the provider and integrating them through checkout, plugins and payment links.</li>
-            <li>Taken merchants live on every integration type: hosted checkout, server-to-server, mobile SDK, and WordPress, WooCommerce and Shopify plugins.</li>
-            <li>Built an integration verification tool that merchants run as the final check before go-live.</li>
-            <li>Run stored-card token migrations from other processors, so a merchant's customers never re-enter their cards.</li>
-            <li>Training two new solutions engineers.</li>
-          </ul>
-        </div>
-      </article>
-      <article class="job">
-        <div class="when"><b>FEB 2020 – MAY 2022</b>Dubai, UAE</div>
-        <div>
-          <h3>Magnati</h3>
-          <p class="role">Integrations &amp; Platforms Lead <span>· payments arm of First Abu Dhabi Bank</span></p>
-          <p>Worked both sides of the table: evaluating vendor solutions for the bank, and selling Magnati's solutions to other banks and merchants.</p>
-          <ul>
-            <li>Technical lead on ADNOC's cashless, card-present convenience store, the first of its kind in the UAE.</li>
-            <li>Led Magnati's payment-as-a-platform product from inception to production.</li>
-            <li>Co-managed the rollout of Magnati's SoftPOS app.</li>
-          </ul>
-        </div>
-      </article>
-      <article class="job">
-        <div class="when"><b>OCT 2018 – JAN 2020</b>Karachi, Pakistan</div>
-        <div>
-          <h3>Access Group</h3>
-          <p class="role">Android Developer</p>
-          <p>Built Android payment and banking apps, working with EMV and ISO 8583.</p>
-        </div>
-      </article>
-      <article class="job edu">
-        <div class="when"><b>EDUCATION</b>Islamabad, Pakistan</div>
-        <div>
-          <h3>COMSATS University</h3>
-          <p class="role">BS Software Engineering <span>· four-year fully funded scholarship</span></p>
-        </div>
-      </article>
-    </div>
+<div class="row head" id="experience">
+  <div class="m" aria-hidden="true"><b>$ git log --career</b>02 / experience</div>
+  <div class="h"><p class="eyebrow">Experience</p><h2>Where I've <span>worked.</span></h2></div>
+</div>
+<div class="row sub">
+  <div class="m" aria-hidden="true"><p class="a">commit HEAD</p><p><span class="k">date</span>  2022-05 → now</p><p><span class="k">org</span>   nomupay</p><p><span class="k">role</span>  integration_team_lead</p><p><span class="k">loc</span>   dubai, AE</p><p><span class="k">diff</span>  <span class="ok">+400 integrations</span></p></div>
+  <div class="h job">
+    <h3>NomuPay</h3>
+    <p class="role">Integration Team Lead, EMEA</p>
+    <p class="where">May 2022 – now · Dubai, UAE</p>
+    <ul>
+      <li>Solutions engineer and architect for 400+ customer and partner integrations, enterprise and SME, with a 90%+ on-time go-live rate.</li>
+      <li>Own the full lifecycle: discovery, architecture, integration guidance, go-live and post-launch support.</li>
+      <li>Cut integration cycles from weeks to days with reusable patterns, hands-on solution design and better documentation.</li>
+      <li>Used SQL and product telemetry to find systemic failure patterns, driving an 11% improvement in authorisation success rates.</li>
+      <li>Built AI-driven diagnostic and monitoring tools that surface issues before customers raise them, reducing support load by 15%.</li>
+      <li>Launched open banking as a payment method in the UK and EU and took it live with 20 merchants.</li>
+      <li>Lead and mentor the team's solutions engineers through their first live integrations.</li>
+    </ul>
   </div>
-</section>
+</div>
+<div class="row sub">
+  <div class="m" aria-hidden="true"><p class="a">commit 2020</p><p><span class="k">date</span>  2020-02 → 2022-05</p><p><span class="k">org</span>   magnati (FAB)</p><p><span class="k">role</span>  integrations_platforms_lead</p><p><span class="k">loc</span>   dubai, AE</p><p><span class="k">diff</span>  <span class="ok">+1,000 outlets</span></p></div>
+  <div class="h job">
+    <h3>Magnati</h3>
+    <p class="role">Integrations &amp; Platforms Lead</p>
+    <p class="where">Feb 2020 – May 2022 · Dubai, UAE · payments arm of First Abu Dhabi Bank</p>
+    <ul>
+      <li>Designed and launched an SDK and API-first onboarding framework from scratch, cutting partner delivery from 5 weeks to 4 across 1,000+ outlet rollouts.</li>
+      <li>Introduced BNPL and digital acceptance capabilities that contributed 2M AED in revenue.</li>
+      <li>Integrated real-time POS and e-commerce financing into Magnati's checkout, so merchants could offer working capital at the point of sale.</li>
+      <li>Ran 40+ solution workshops and coordinated 6+ vendors alongside engineering, QA and compliance.</li>
+      <li>Co-led the design and rollout of SoftPOS and digital acceptance solutions.</li>
+    </ul>
+  </div>
+</div>
+<div class="row sub">
+  <div class="m" aria-hidden="true"><p class="a">commit 2018</p><p><span class="k">date</span>  2018-10 → 2020-01</p><p><span class="k">org</span>   access_group</p><p><span class="k">role</span>  android_developer</p><p><span class="k">diff</span>  <span class="ok">+200k users</span></p></div>
+  <div class="h job">
+    <h3>Access Group</h3>
+    <p class="role">Android Developer</p>
+    <p class="where">Oct 2018 – Jan 2020</p>
+    <ul>
+      <li>Built and maintained secure, production mobile apps serving 200K+ users, including a bilingual digital banking app.</li>
+      <li>Implemented the middleware and backend integrations behind them.</li>
+    </ul>
+  </div>
+</div>
+<div class="row sub">
+  <div class="m" aria-hidden="true"><p class="a">init</p><p><span class="k">degree</span>   bs_software_engineering</p><p><span class="k">funding</span>  scholarship=full</p></div>
+  <div class="h job">
+    <h3>COMSATS University, Islamabad</h3>
+    <p class="role">BS Software Engineering</p>
+    <p class="where">Four-year fully funded scholarship</p>
+  </div>
+</div>
 
-<!-- ACHIEVEMENTS -->
-<section class="block" id="achievements" aria-labelledby="ach-h">
-  <div class="label" aria-hidden="true"><div class="sticky">
-    <span class="cmd">$ SELECT * FROM wins;</span>
-    <span>4 rows returned</span>
-    <span class="opt dim">status=settled</span>
-  </div></div>
-  <div class="body">
-    <p class="eyebrow">Achievements</p>
-    <h2 id="ach-h">What's <i>landed.</i></h2>
-    <div class="wins">
-      <div class="win"><span class="num">20</span><p>Merchants live on open banking across the UK and EU, from launch.</p></div>
-      <div class="win"><span class="num">40+</span><p>Vehicle inspection centres running a POS integration I built to the client's spec and connected on site.</p></div>
-      <div class="win"><span class="num word">First</span><p>Cashless, card-present convenience store in the UAE, for ADNOC. I was the technical lead.</p></div>
-      <div class="win"><span class="num word">Every</span><p>Integration type taken live: hosted checkout, server-to-server, SDK and plugins.</p></div>
-    </div>
-  </div>
-</section>
+<!-- NUMBERS -->
+<div class="row head" id="numbers">
+  <div class="m" aria-hidden="true"><b>$ SELECT * FROM wins;</b>03 / numbers</div>
+  <div class="h"><p class="eyebrow">Numbers</p><h2>What's <span>landed.</span></h2></div>
+</div>
+<div class="row sub">
+  <div class="m" aria-hidden="true"><p>integrations.count <span class="ok">≥ 400</span></p><p class="k">on_time ≥ 0.90</p></div>
+  <div class="h stat"><span class="n">400+</span><p>Customer and partner integrations designed and taken live.</p></div>
+</div>
+<div class="row sub">
+  <div class="m" aria-hidden="true"><p>auth_success_rate <span class="ok">+11%</span></p><p class="k">source=sql, telemetry</p></div>
+  <div class="h stat"><span class="n">+11%</span><p>More payments approved, from fixing failure patterns found in the data.</p></div>
+</div>
+<div class="row sub">
+  <div class="m" aria-hidden="true"><p>revenue.bnpl_digital <span class="ok">2,000,000 AED</span></p></div>
+  <div class="h stat"><span class="n">2M</span><p>AED in revenue from BNPL and digital acceptance at Magnati.</p></div>
+</div>
+<div class="row sub">
+  <div class="m" aria-hidden="true"><p>outlets.rolled_out <span class="ok">≥ 1,000</span></p></div>
+  <div class="h stat"><span class="n">1,000+</span><p>Retail outlets onboarded through a framework I built from scratch.</p></div>
+</div>
 
 <!-- PROJECTS -->
-<section class="block" id="projects" aria-labelledby="proj-h">
-  <div class="label" aria-hidden="true"><div class="sticky">
-    <span class="cmd">$ gh repo list</span>
-    <span>humayuntanwar/*</span>
-    <span class="opt dim">visibility=public</span>
-    <span class="opt dim">built_after_hours=true</span>
-  </div></div>
-  <div class="body">
-    <p class="eyebrow">Projects &amp; experiments</p>
-    <h2 id="proj-h">Things I build <i>to find out.</i></h2>
-    <div class="projects">
-      <a class="proj" href="https://github.com/humayuntanwar/agent-sees-different" target="_blank" rel="noopener">
-        <div class="top"><span class="repo">agent-sees-different</span><span class="kind k-ai">AI · Security</span></div>
-        <h3>What an AI agent sees vs. what you see</h3>
-        <p>Desktop agents read apps through the accessibility tree, not the pixels. I built a bank transfer page where the two disagree.</p>
-        <p class="find"><b>FOUND</b>Asked to cancel, the agent sent the transfer 3 times out of 3.</p>
-      </a>
-      <a class="proj" href="https://github.com/humayuntanwar/d1-banking-calibration" target="_blank" rel="noopener">
-        <div class="top"><span class="repo">d1-banking-calibration</span><span class="kind k-ai">AI · Banking</span></div>
-        <h3>Does a model mean it when it says 90% sure?</h3>
-        <p>A personal experiment: Liquid AI's d1-2B on BANKING77, a public set of 3,080 bank customer queries, run on a CPU.</p>
-        <p class="find"><b>FOUND</b>At 90%+ confidence it was right 98.7% of the time. More careful than its number.</p>
-      </a>
-      <a class="proj" href="https://github.com/humayuntanwar/single-tenant-k8s-kit" target="_blank" rel="noopener">
-        <div class="top"><span class="repo">single-tenant-k8s-kit</span><span class="kind k-infra">Infra</span></div>
-        <h3>One app, one isolated cloud per customer</h3>
-        <p>Terraform, Helm and Kubernetes, built by hand to learn single-tenant deployment. Deployed to AWS EKS in London, then torn down cleanly.</p>
-        <p class="find"><b>PROVED</b>Customers can't reach each other. 23 tests, every choice explained.</p>
-      </a>
-      <a class="proj" href="https://github.com/humayuntanwar/Webhook-receipt" target="_blank" rel="noopener">
-        <div class="top"><span class="repo">Webhook-receipt</span><span class="kind k-pay">Payments</span></div>
-        <h3>Why didn't that webhook signature match?</h3>
-        <p>Capture webhooks from Stripe, GitHub, Shopify and Slack and verify the signature in your browser.</p>
-        <p class="find"><b>DOES</b>Tells you which common mistake broke the signature, not just that it failed.</p>
-      </a>
-      <a class="proj" href="https://github.com/humayuntanwar/ming-tts-on-cpu" target="_blank" rel="noopener">
-        <div class="top"><span class="repo">ming-tts-on-cpu</span><span class="kind k-ai">AI · Voice</span></div>
-        <h3>A top open voice model, with no GPU</h3>
-        <p>Ran Ming-3.0-tts on a plain 8-core machine and had Whisper check every clip.</p>
-        <p class="find"><b>FOUND</b>It misread prices and dates. Traced it to text cleanup; a one-line workaround cut the error rate from 14.1% to 6.0%.</p>
-      </a>
-      <a class="proj" href="https://github.com/humayuntanwar/game-to-math-transfer" target="_blank" rel="noopener">
-        <div class="top"><span class="repo">game-to-math-transfer</span><span class="kind k-ai">AI · Research</span></div>
-        <h3>Does skill learned in games transfer to math?</h3>
-        <p>A 7-parameter search controller trained only on puzzle games, tested on math problems.</p>
-        <p class="find"><b>FOUND</b>Transfer is real but selective. My pre-registered prediction failed, and I published that too.</p>
-      </a>
-    </div>
-    <a class="more" href="https://github.com/humayuntanwar" target="_blank" rel="noopener">All repositories on GitHub →</a>
-  </div>
-</section>
+<div class="row head" id="projects">
+  <div class="m" aria-hidden="true"><b>$ gh repo list humayuntanwar</b>04 / projects</div>
+  <div class="h"><p class="eyebrow">Projects</p><h2>Things I build <span>to find out.</span></h2></div>
+</div>
+<div class="row sub">
+  <div class="m" aria-hidden="true"><p class="c">d1-banking-calibration</p><p class="k">python · pytorch · hugging face</p><p>acc=0.870  <span class="ok">p@0.9=0.987</span></p></div>
+  <div class="h"><a class="proj" href="https://github.com/humayuntanwar/d1-banking-calibration" target="_blank" rel="noopener">
+    <div class="t"><h3>Can a bank trust an AI's confidence score?</h3><span class="go">GitHub ↗</span></div>
+    <p>Tested Liquid AI's d1-2B on 3,080 BANKING77 support tickets, on CPU only. 87% accurate across 77 intents; when it said 90%+ sure, it was right 98.7% of the time.</p>
+  </a></div>
+</div>
+<div class="row sub">
+  <div class="m" aria-hidden="true"><p class="c">ming-tts-on-cpu</p><p class="k">python · pytorch · whisper</p><p>wer <span class="r">0.141</span> → <span class="ok">0.060</span></p></div>
+  <div class="h"><a class="proj" href="https://github.com/humayuntanwar/ming-tts-on-cpu" target="_blank" rel="noopener">
+    <div class="t"><h3>A top voice model, running without a GPU</h3><span class="go">GitHub ↗</span></div>
+    <p>Got Ming-3.0-tts running on CPU with a 3-line patch, then found why it misread prices and dates. A one-line fix cut the word error rate from 14.1% to 6.0%.</p>
+  </a></div>
+</div>
+<div class="row sub">
+  <div class="m" aria-hidden="true"><p class="c">game-to-math-transfer</p><p class="k">python · reinforcement learning · search</p><p>prediction=<span class="r">falsified</span></p></div>
+  <div class="h"><a class="proj" href="https://github.com/humayuntanwar/game-to-math-transfer" target="_blank" rel="noopener">
+    <div class="t"><h3>Does skill learned in games transfer to math?</h3><span class="go">GitHub ↗</span></div>
+    <p>A search controller trained only on puzzle games beat classic search on 3-SAT, but not elsewhere. My pre-registered prediction failed, and I published that too.</p>
+  </a></div>
+</div>
+<div class="row sub">
+  <div class="m" aria-hidden="true"><p class="c">agent-sees-different</p><p class="k">ai agents · accessibility tree</p><p>cancel→sent <span class="r">3/3</span></p></div>
+  <div class="h"><a class="proj" href="https://github.com/humayuntanwar/agent-sees-different" target="_blank" rel="noopener">
+    <div class="t"><h3>What an AI agent sees vs. what you see</h3><span class="go">GitHub ↗</span></div>
+    <p>Built a payment confirmation page where the screen and the accessibility tree disagree. Asked to cancel, a desktop agent sent the transfer 3 times out of 3.</p>
+  </a></div>
+</div>
+<div class="row sub">
+  <div class="m" aria-hidden="true"><p class="c">single-tenant-k8s-kit</p><p class="k">terraform · helm · kubernetes · aws</p><p>tests=23 <span class="ok">pass</span></p></div>
+  <div class="h"><a class="proj" href="https://github.com/humayuntanwar/single-tenant-k8s-kit" target="_blank" rel="noopener">
+    <div class="t"><h3>One app, one isolated environment per customer</h3><span class="go">GitHub ↗</span></div>
+    <p>Built by hand with Terraform, Helm and Kubernetes, deployed to AWS EKS in London, with customer isolation proven by tests.</p>
+  </a></div>
+</div>
+<div class="row sub">
+  <div class="m" aria-hidden="true"><p class="c">Webhook-receipt</p><p class="k">web crypto · hmac-sha256</p><p>signature=<span class="ok">explained</span></p></div>
+  <div class="h"><a class="proj" href="https://github.com/humayuntanwar/Webhook-receipt" target="_blank" rel="noopener">
+    <div class="t"><h3>Why didn't that webhook signature match?</h3><span class="go">GitHub ↗</span></div>
+    <p>Captures webhooks from Stripe, GitHub, Shopify and Slack, verifies the signature in the browser, and tells you which common mistake broke it.</p>
+  </a></div>
+</div>
 
 <!-- CONTACT -->
-<section class="block contact" id="contact" aria-labelledby="ct-h">
-  <div class="label" aria-hidden="true"><div class="sticky">
-    <span class="cmd">$ curl -X POST /hello</span>
-    <span class="ok">202 Accepted</span>
-    <span class="opt dim">awaiting_response…</span>
-  </div></div>
-  <div class="body">
-    <p class="eyebrow">Contact</p>
-    <h2 id="ct-h">Say <i>hello.</i></h2>
+<div class="row head" id="contact">
+  <div class="m" aria-hidden="true"><b>$ curl -X POST /hello</b>05 / contact</div>
+  <div class="h"><p class="eyebrow">Contact</p><h2>Say <span>hello.</span></h2></div>
+</div>
+<div class="row end">
+  <div class="m" aria-hidden="true"><p class="ok">202 Accepted</p><p class="k">awaiting_response…</p></div>
+  <div class="h">
     <div class="links">
       <a href="https://www.linkedin.com/in/humayuntanwar" target="_blank" rel="noopener"><span class="k">LinkedIn</span><span class="v">/in/humayuntanwar</span></a>
       <a href="https://github.com/humayuntanwar" target="_blank" rel="noopener"><span class="k">GitHub</span><span class="v">@humayuntanwar</span></a>
@@ -377,13 +336,10 @@ h2 i,.after .line i{font-style:normal;color:var(--ink-soft)}
       <div><span class="k">Based in</span><span class="v">Dubai, UAE</span></div>
     </div>
   </div>
-</section>
+</div>
 </main>
 
-<footer>
-  <span>© 2026 HUMAYUN TANWAR</span>
-  <span>THE LINE IN THE MIDDLE · EOF</span>
-</footer>
+<footer><span>EOF</span><span>© 2026 Humayun Tanwar</span></footer>
 
 <script>
 (function(){
@@ -393,9 +349,9 @@ h2 i,.after .line i{font-style:normal;color:var(--ink-soft)}
   const seamEl = document.getElementById('seam');
   const hero = document.getElementById('top');
   const reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const narrow = () => window.matchMedia('(max-width:860px)').matches;
 
-  // jargon wall
-  const W = ['ISO8583','MTI=0100','DE39=05','3DS2','ACS','ARes','CRes','BIN 457173','PAN ****4242','tokenize()','vault_id','PCI DSS L1','AOC','SCA','PSD2','TRA exemption','MIT','CIT','auth','capture','void','refund','chargeback','RC 10.4','RC 13.1','ARN','MDR 1.9%','interchange++','scheme fee','acquirer','issuer','PSP','webhook','retry=3','backoff','idempotency_key','HMAC-SHA256','mTLS','TLS1.3','p99=840ms','504','429','DECLINED','DO_NOT_HONOR','INSUFFICIENT_FUNDS','settlement','T+1','T+2','recon_mismatch','ledger','payout','FX','DCC','SEPA Inst','Faster Payments','open banking','AISP','PISP','consent_id','OAuth2','JWT','kid','EMV','ARQC','CVM','POS','TCP/IP','batch_close','cutoff 17:00','MCC 6012','KYC','KYB','AML','sanctions','velocity','risk_score=87','3RI','frictionless','challenge','rollback','hotfix','go-live','UAT','sandbox','staging','prod'];
+  const W = ['ISO8583','MTI=0100','DE39=05','3DS2','ACS','ARes','CRes','BIN 457173','PAN ****4242','tokenize()','vault_id','PCI DSS L1','AOC','SCA','PSD2','TRA exemption','MIT','CIT','auth','capture','void','refund','chargeback','RC 10.4','RC 13.1','ARN','MDR 1.9%','interchange++','scheme fee','acquirer','issuer','PSP','webhook','retry=3','backoff','idempotency_key','HMAC-SHA256','mTLS','TLS1.3','p99=840ms','504','429','DECLINED','DO_NOT_HONOR','INSUFFICIENT_FUNDS','settlement','T+1','T+2','recon_mismatch','ledger','payout','FX','DCC','SEPA Inst','Faster Payments','open banking','AISP','PISP','consent_id','OAuth2','JWT','kid','EMV','ARQC','CVM','POS','SoftPOS','BNPL','batch_close','cutoff 17:00','MCC 6012','KYC','KYB','AML','sanctions','velocity','risk_score=87','3RI','frictionless','challenge','rollback','hotfix','go-live','UAT','sandbox','staging','prod'];
   let seed = 7;
   const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
   document.querySelectorAll('[data-wall]').forEach((wall) => {
@@ -410,59 +366,59 @@ h2 i,.after .line i{font-style:normal;color:var(--ink-soft)}
     wall.append(f);
   });
 
-  // the line
-  let p = 0.5, raf = null, touched = false, heroVisible = true;
-  function apply(v){
-    p = Math.max(0, Math.min(1, v));
-    root.style.setProperty('--p', p.toFixed(4));
-    grip.setAttribute('aria-valuenow', String(Math.round(p * 100)));
+  // the line: the visitor's position in the hero, gliding to the spine (30%) as they scroll
+  const SPINE = 0.30;
+  let user = 0.5, raf = null, touched = false, drag = null;
+  function render(){
+    const t = narrow() ? 0 : Math.min(1, Math.max(0, window.scrollY / (hero.offsetHeight * 0.45)));
+    const e = t * t * (3 - 2 * t);
+    root.style.setProperty('--p', (user + (SPINE - user) * e).toFixed(4));
+    grip.setAttribute('aria-valuenow', String(Math.round(user * 100)));
+    seamEl.classList.toggle('docked', narrow() ? window.scrollY > hero.offsetHeight * 0.6 : t > 0.35);
   }
+  function setUser(v){ user = Math.max(0, Math.min(1, v)); render(); }
   function animateTo(v, ms){
     cancelAnimationFrame(raf);
-    const from = p, start = performance.now();
-    const io = (t) => t < .5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3) / 2;
-    const step = (now) => { const t = Math.min(1, (now - start) / ms); apply(from + (v - from) * io(t)); if (t < 1) raf = requestAnimationFrame(step); };
+    const from = user, start = performance.now();
+    const io = (k) => k < .5 ? 4*k*k*k : 1 - Math.pow(-2*k + 2, 3) / 2;
+    const step = (now) => { const k = Math.min(1, (now - start) / ms); setUser(from + (v - from) * io(k)); if (k < 1) raf = requestAnimationFrame(step); };
     raf = requestAnimationFrame(step);
   }
   function firstTouch(){ if (!touched) { touched = true; hint.classList.add('gone'); } cancelAnimationFrame(raf); }
+  const inHero = () => window.scrollY < hero.offsetHeight * 0.3;
 
-  // the draggable line belongs to the opening scene only
-  new IntersectionObserver((en) => {
-    heroVisible = en[0].intersectionRatio > 0.35;
-    seamEl.classList.toggle('off', !heroVisible);
-  }, { threshold: [0, .35, 1] }).observe(hero);
-
-  let drag = null;
   hero.addEventListener('pointerdown', (e) => {
     if (e.target.closest('a')) return;
     drag = { id:e.pointerId, x:e.clientX, y:e.clientY, locked:false };
-    if (e.pointerType === 'mouse') { drag.locked = true; firstTouch(); apply(e.clientX / innerWidth); }
+    if (e.pointerType === 'mouse') { drag.locked = true; firstTouch(); setUser(e.clientX / innerWidth); }
   });
   grip.addEventListener('pointerdown', (e) => {
-    drag = { id:e.pointerId, x:e.clientX, y:e.clientY, locked:true }; firstTouch(); apply(e.clientX / innerWidth);
+    drag = { id:e.pointerId, x:e.clientX, y:e.clientY, locked:true }; firstTouch(); setUser(e.clientX / innerWidth);
     try { grip.setPointerCapture(e.pointerId); } catch (_) {}
   });
   document.addEventListener('pointermove', (e) => {
-    if (!drag || drag.id !== e.pointerId || !heroVisible) return;
+    if (!drag || drag.id !== e.pointerId || !inHero()) return;
     if (!drag.locked) {
       const dx = Math.abs(e.clientX - drag.x), dy = Math.abs(e.clientY - drag.y);
       if (dx > 8 && dx > dy) { drag.locked = true; firstTouch(); } else if (dy > 8) { drag = null; return; } else return;
     }
-    apply(e.clientX / innerWidth);
+    setUser(e.clientX / innerWidth);
   });
   const up = () => { drag = null; };
   document.addEventListener('pointerup', up);
   document.addEventListener('pointercancel', up);
   grip.addEventListener('keydown', (e) => {
     const step = e.shiftKey ? .1 : .03, k = e.key;
-    const map = { ArrowLeft: p - step, ArrowDown: p - step, ArrowRight: p + step, ArrowUp: p + step, Home: 0, End: 1 };
-    if (k in map) { e.preventDefault(); firstTouch(); apply(map[k]); }
+    const map = { ArrowLeft: user - step, ArrowDown: user - step, ArrowRight: user + step, ArrowUp: user + step, Home: 0, End: 1 };
+    if (k in map) { e.preventDefault(); firstTouch(); setUser(map[k]); }
   });
+  let ticking = false;
+  window.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(() => { ticking = false; render(); }); } }, { passive: true });
+  window.addEventListener('resize', render);
 
-  // opening move: all noise, then the line sweeps and settles
-  if (reduce) apply(0.5);
+  if (reduce || window.scrollY > 10) { setUser(0.5); }
   else {
-    apply(0.97);
+    setUser(0.97);
     setTimeout(() => { if (!touched) animateTo(0.08, 1500); }, 500);
     setTimeout(() => { if (!touched) animateTo(0.5, 1100); }, 2150);
   }
