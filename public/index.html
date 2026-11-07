@@ -175,9 +175,22 @@ canvas.scene{position:absolute;inset:0;width:100%;height:100%;display:block}
   .intro .r>.jg{font-size:11px}
 }
 
+
+/* content scenes size to their content: no forced full-screen height */
+.sec:not(.hero):not(.wires-wrap){height:auto;min-height:0}
+.sec:not(.hero):not(.wires-wrap) .layer.after{position:relative;inset:auto}
+.sec:not(.hero):not(.wires-wrap) .tbl{top:0;transform:none;padding-block:84px 48px}
+.sec:not(.hero):not(.wires-wrap) .after .tbl{position:relative}
+.sec:not(.hero):not(.wires-wrap) .before .tbl{position:absolute}
+.sec.hello .tbl{padding-bottom:84px}
+.sec + .sec .layer.after{box-shadow:inset 0 1px 0 #E2DED6}
+.hero{height:min(100svh,920px);min-height:620px}
+
 /* phone: the line lives in the opening; every other scene shows both languages stacked */
 @media (max-width:760px){
-  .sec:not(.wires-wrap){cursor:auto;height:auto;min-height:100svh;padding-block:56px 72px}
+  .sec:not(.wires-wrap){cursor:auto;height:auto;min-height:0;padding-block:36px 40px}
+  .sec:not(.wires-wrap) .tbl{padding-block:0!important}
+  .wires-wrap{height:78svh;min-height:520px}
   .sec:not(.wires-wrap) .before{display:none}
   .sec:not(.wires-wrap) .after{position:relative;inset:auto;background:var(--paper)}
   .sec:not(.wires-wrap) .after .cap{position:static;margin:0 20px 28px}
