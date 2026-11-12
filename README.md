@@ -2,6 +2,10 @@
 
 Personal site of Humayun Tanwar, solutions engineer in payments.
 
-One line runs down the whole page. Left of it is payments as engineers live it; right of it is what everyone else gets. Drag the line.
+The front page tells my story as one line drawn on a map. Scroll to travel.
 
 Plain static HTML, no build step. Deployed on Cloudflare.
+
+- `/` the story: one line on a map, from Hyderabad to now
+- `/letter` a short letter
+- `/window` the view from a window in Dubai
