@@ -43,6 +43,7 @@ canvas{position:fixed;inset:0;width:100%;height:100%;display:block;pointer-event
 .bar nav{display:flex;flex-wrap:wrap;margin:0 -10px}
 .bar a{display:inline-flex;align-items:center;min-height:44px;padding:0 10px;color:var(--ink);text-decoration:none}
 .bar a:hover{color:var(--line)}
+.bar a[aria-current]{color:var(--line)}
 .cue{position:fixed;left:50%;bottom:64px;transform:translateX(-50%);font:500 12px/1 var(--sign);letter-spacing:.3em;text-transform:uppercase;color:var(--soft);transition:opacity .6s;pointer-events:none}
 .cue.gone{opacity:0}
 @media (max-width:700px){.ch{padding-top:max(34px,6vh)}.ch>div{font-size:clamp(20px,5.6vw,26px)}.bar{font-size:13px}.bar a{padding:0 8px}.bar nav{margin:0 -8px}}
@@ -66,6 +67,8 @@ canvas{position:fixed;inset:0;width:100%;height:100%;display:block;pointer-event
 <footer class="bar">
   <div class="who"><b>Humayun Tanwar</b><span id="dist">0 km from home</span></div>
   <nav aria-label="Find me">
+    <a href="/" aria-current="page">Story</a>
+    <a href="/me/">Me</a>
     <a href="/letter/">Letter</a>
     <a href="/window/">Window</a>
     <a href="mailto:humayuntanwar@gmail.com">Email</a>

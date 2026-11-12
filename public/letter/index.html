@@ -46,7 +46,10 @@ a:focus-visible{outline:2px solid var(--pen);outline-offset:3px;border-radius:2p
 .name{font-size:.86em;color:var(--ink-soft)}
 .ps{margin:2.4em 0 0;padding-top:1.3em;border-top:1px solid rgba(20,20,40,.12);font-size:.92em;color:var(--ink-soft)}
 .ps b{font-weight:500;color:var(--ink)}
-.out{max-width:700px;margin:26px auto 0;text-align:center;font-size:13px;letter-spacing:.08em;color:var(--sky-ink)}
+.out{max-width:700px;margin:22px auto 0;display:flex;flex-wrap:wrap;justify-content:center;font-size:14px;letter-spacing:.06em}
+.out a{display:inline-flex;align-items:center;min-height:44px;padding:0 11px;color:var(--sky-ink);text-decoration:none}
+.out a:hover,.out a[aria-current]{color:var(--sky-ink);text-decoration:underline;text-underline-offset:4px;text-decoration-color:currentColor}
+.out a:hover{opacity:.8}
 @media (max-width:560px){
   body{font-size:17.5px}
   .sheet{transform:none}
@@ -88,7 +91,15 @@ a:focus-visible{outline:2px solid var(--pen);outline-offset:3px;border-radius:2p
 
   <p class="ps"><b>P.S.</b> In a hurry? Integration Team Lead, EMEA at NomuPay. 8+ years in payments. 400+ integrations live. Based in Dubai.</p>
 </main>
-<p class="out">humayuntanwar.com</p>
+<nav class="out" aria-label="Find me">
+    <a href="/">Story</a>
+    <a href="/me/">Me</a>
+    <a href="/letter/" aria-current="page">Letter</a>
+    <a href="/window/">Window</a>
+    <a href="mailto:humayuntanwar@gmail.com">Email</a>
+    <a href="https://www.linkedin.com/in/humayuntanwar" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/humayuntanwar" target="_blank" rel="noopener">GitHub</a>
+  </nav>
 
 <script>
 (function(){

@@ -33,6 +33,7 @@ canvas:active{cursor:grabbing}
 .sill nav{display:flex;flex-wrap:wrap;gap:0 4px;margin:0 -10px}
 .sill a{display:inline-flex;align-items:center;min-height:44px;padding:0 10px;color:var(--sill-ink);font-size:15px;text-decoration:underline;text-decoration-color:rgba(233,230,223,.35);text-underline-offset:4px}
 .sill a:hover{text-decoration-color:var(--sill-ink)}
+.sill a[aria-current]{text-decoration-color:var(--sill-ink);text-decoration-thickness:2px}
 .sill a:focus-visible{outline:2px solid var(--sill-ink);outline-offset:-4px}
 .hint{position:fixed;right:max(26px,4vw);top:max(24px,4vh);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--glass);opacity:.6;pointer-events:none;transition:opacity 1s,color 1.2s;text-shadow:0 1px 10px var(--glass-shadow)}
 .hint.gone{opacity:0}
@@ -55,11 +56,13 @@ canvas:active{cursor:grabbing}
 <footer class="sill">
   <div class="who"><b>Humayun Tanwar</b><span id="clock">Dubai</span></div>
   <nav aria-label="Find me">
-    <a href="../letter/">Read my letter</a>
+    <a href="/">Story</a>
+    <a href="/me/">Me</a>
+    <a href="/letter/">Letter</a>
+    <a href="/window/" aria-current="page">Window</a>
     <a href="mailto:humayuntanwar@gmail.com">Email</a>
     <a href="https://www.linkedin.com/in/humayuntanwar" target="_blank" rel="noopener">LinkedIn</a>
     <a href="https://github.com/humayuntanwar" target="_blank" rel="noopener">GitHub</a>
-    <a href="https://medium.com/@humayuntanwar" target="_blank" rel="noopener">Writing</a>
   </nav>
 </footer>
 
