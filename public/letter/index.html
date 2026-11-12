@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A letter from Humayun Tanwar</title>
+<meta name="description" content="Humayun Tanwar, Integration Team Lead EMEA at NomuPay. A short letter about who I am and what I do.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Humayun Tanwar">
+<meta property="og:description" content="Integration Team Lead, EMEA at NomuPay. A short letter.">
+<meta property="og:image" content="https://humayuntanwar.com/og.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400&family=La+Belle+Aurore&display=swap">
+<style>
+/* One sheet of paper under the Dubai sky. No menu, no buttons: links are underlined words in the sentences. */
+:root{
+  --sky-a:#0B1026; --sky-b:#1B2145; --sky-ink:#AEB6DA;
+  --paper:#F5F5F1; --ink:#1B1B1F; --ink-soft:#5A5A63; --pen:#1F3FBF; --fold:rgba(20,20,40,.055);
+  --serif:'Literata', Georgia, 'Times New Roman', serif;
+  --hand:'La Belle Aurore', 'Segoe Script', 'Bradley Hand', cursive;
+  color-scheme:light;
+}
+:root[data-sky="dawn"]{--sky-a:#F2B38C;--sky-b:#8FA6CF;--sky-ink:#2B2F4A}
+:root[data-sky="day"]{--sky-a:#BFD6EA;--sky-b:#E8EEF2;--sky-ink:#3A4658}
+:root[data-sky="dusk"]{--sky-a:#3A2F5E;--sky-b:#D98A6A;--sky-ink:#F4E6DC}
+*{box-sizing:border-box}
+html{background:var(--sky-a)}
+body{margin:0;min-height:100vh;min-height:100svh;background:linear-gradient(180deg,var(--sky-a),var(--sky-b));background-attachment:fixed;color:var(--ink);font-family:var(--serif);font-size:19px;line-height:1.62;-webkit-font-smoothing:antialiased;
+  padding:max(40px,6vh) max(14px, env(safe-area-inset-right, 0px)) max(40px,6vh) max(14px, env(safe-area-inset-left, 0px))}
+.sheet{position:relative;max-width:700px;margin:0 auto;background:var(--paper);padding:clamp(34px,7vw,76px) clamp(24px,7vw,80px) clamp(40px,7vw,72px);
+  box-shadow:0 1px 1px rgba(0,0,0,.12),0 18px 50px rgba(0,0,0,.28);transform:rotate(-.35deg);
+  background-image:linear-gradient(180deg,transparent calc(33.3% - 1px),var(--fold) 33.3%,transparent calc(33.3% + 2px)),linear-gradient(180deg,transparent calc(66.6% - 1px),var(--fold) 66.6%,transparent calc(66.6% + 2px))}
+.date{margin:0 0 2.2em;font-style:italic;color:var(--ink-soft);font-size:.92em}
+p{margin:0 0 1.15em;text-wrap:pretty;hanging-punctuation:first}
+.hello{font-size:1.18em;margin-bottom:.9em}
+a{color:inherit;text-decoration:underline;text-decoration-color:var(--pen);text-decoration-thickness:1.5px;text-underline-offset:3px}
+a:hover{color:var(--pen)}
+a:focus-visible{outline:2px solid var(--pen);outline-offset:3px;border-radius:2px}
+.photo{float:right;position:relative;width:150px;margin:-6px -18px 14px 26px;padding:7px 7px 9px;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.2),0 8px 18px rgba(0,0,0,.16);transform:rotate(3.2deg)}
+.photo img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 8%}
+.photo svg{position:absolute;top:-20px;left:22px;width:26px;height:58px}
+.sign{margin:1.9em 0 0}
+.sig{display:block;font-family:var(--hand);font-size:2.5em;line-height:1.1;color:var(--pen);transform:rotate(-3deg);transform-origin:left;margin:.1em 0 .15em -.05em}
+.name{font-size:.86em;color:var(--ink-soft)}
+.ps{margin:2.4em 0 0;padding-top:1.3em;border-top:1px solid rgba(20,20,40,.12);font-size:.92em;color:var(--ink-soft)}
+.ps b{font-weight:500;color:var(--ink)}
+.out{max-width:700px;margin:26px auto 0;text-align:center;font-size:13px;letter-spacing:.08em;color:var(--sky-ink)}
+@media (max-width:560px){
+  body{font-size:17.5px}
+  .sheet{transform:none}
+  .photo{width:104px;margin:-2px -6px 10px 16px;padding:5px 5px 7px}
+  .photo svg{top:-16px;left:14px;width:21px;height:46px}
+}
+@media print{html,body{background:#fff}.sheet{box-shadow:none;transform:none}.out{display:none}}
+</style>
+</head>
+<body>
+<main class="sheet">
+  <figure class="photo">
+    <svg viewBox="0 0 26 58" fill="none" stroke="#8C9099" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M8 20V44a5.5 5.5 0 0 0 11 0V12a8 8 0 0 0-16 0v34"/></svg>
+    <img src="../me.jpg" alt="Humayun Tanwar" width="900" height="1200">
+  </figure>
+
+  <p class="date"><span id="when">Dubai</span></p>
+
+  <p class="hello">Hello,</p>
+
+  <p>I'm Humayun. I lead the integration team for EMEA at <a href="https://nomupay.com" target="_blank" rel="noopener">NomuPay</a>, a payments company, and for more than eight years I've done one thing: get payments to go live.</p>
+
+  <p>Most of that work happens in the middle. A merchant wants to get paid, a bank wants to be sure, and an engineer wants a spec. I sit between the three and turn what each of them needs into something that works.</p>
+
+  <p>So far that's over 400 integrations taken live, nine in ten of them on schedule. Along the way I went through enough declined payments in SQL to lift approval rates by 11%, and I launched open banking across the UK and EU with our first 20 merchants.</p>
+
+  <p>Before NomuPay I was at Magnati, the payments arm of First Abu Dhabi Bank. I built the onboarding framework behind more than 1,000 retail outlets there and helped bring buy now, pay later to its merchants. Before that I was an Android developer, building banking apps used by over 200,000 people.</p>
+
+  <p>Outside work I build small experiments to answer questions that bother me. <a href="https://github.com/humayuntanwar/d1-banking-calibration" target="_blank" rel="noopener">Can a bank trust an AI's confidence score?</a> <a href="https://github.com/humayuntanwar/agent-sees-different" target="_blank" rel="noopener">What does an AI agent see that you don't?</a> <a href="https://github.com/humayuntanwar/ming-tts-on-cpu" target="_blank" rel="noopener">Why did a voice model keep misreading prices?</a> The rest are on <a href="https://github.com/humayuntanwar" target="_blank" rel="noopener">GitHub</a>.</p>
+
+  <p>I also write, mostly about payments and solutions engineering: <a href="https://medium.com/@humayuntanwar/discovery-is-your-competitive-advantage-not-your-feature-list-f2165ff8b1e1" target="_blank" rel="noopener">why discovery beats a feature list</a>, <a href="https://medium.com/@humayuntanwar/why-your-payment-approval-rate-is-buried-in-hidden-dashboards-and-what-thats-costing-you-9ed2196515c7" target="_blank" rel="noopener">why your approval rate is hiding from you</a>, and <a href="https://nomupay.com/blog/payments-trends-in-2026/" target="_blank" rel="noopener">where payments are heading in 2026</a>. There's more on <a href="https://medium.com/@humayuntanwar" target="_blank" rel="noopener">Medium</a>.</p>
+
+  <p>If any of this is useful to you, write back. I'm at <a href="mailto:humayuntanwar@gmail.com">humayuntanwar@gmail.com</a> and on <a href="https://www.linkedin.com/in/humayuntanwar" target="_blank" rel="noopener">LinkedIn</a>. <span id="now">I usually reply within a day.</span></p>
+
+  <p class="sign">Thanks for reading,
+    <span class="sig" aria-hidden="true">Humayun</span>
+    <span class="name">Humayun Tanwar</span>
+  </p>
+
+  <p class="ps"><b>P.S.</b> In a hurry? Integration Team Lead, EMEA at NomuPay. 8+ years in payments. 400+ integrations live. Based in Dubai.</p>
+</main>
+<p class="out">humayuntanwar.com</p>
+
+<script>
+(function(){
+  try {
+    var now = new Date(), tz = 'Asia/Dubai';
+    var day = new Intl.DateTimeFormat('en-GB', { timeZone: tz, weekday: 'long', day: 'numeric', month: 'long' }).format(now);
+    var time = new Intl.DateTimeFormat('en-US', { timeZone: tz, hour: 'numeric', minute: '2-digit' }).format(now).toLowerCase();
+    var h = +new Intl.DateTimeFormat('en-GB', { timeZone: tz, hour: 'numeric', hourCycle: 'h23' }).format(now);
+    document.getElementById('when').textContent = 'Dubai, ' + day + ', ' + time;
+    var sky = h < 5 ? 'night' : h < 7 ? 'dawn' : h < 17 ? 'day' : h < 19 ? 'dusk' : 'night';
+    if (sky !== 'night') document.documentElement.setAttribute('data-sky', sky);
+    var line = h < 6 ? 'so I’m asleep' : h < 9 ? 'so my day is just starting' : h < 18 ? 'so I’m probably at work' : h < 23 ? 'so I’m done for the day' : 'so I’m probably asleep';
+    document.getElementById('now').textContent = 'It’s ' + time + ' in Dubai as you read this, ' + line + ', but I usually reply within a day.';
+  } catch (e) {}
+})();
+</script>
+</body>
+</html>
