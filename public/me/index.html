@@ -4,94 +4,66 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Humayun Tanwar</title>
-<meta name="description" content="Humayun Tanwar, Integration Team Lead EMEA at NomuPay. Where I work now and how I got here.">
+<meta name="description" content="Humayun Tanwar. EMEA Lead, Integrations at NomuPay, Dubai.">
 <meta name="robots" content="noindex">
 <meta property="og:title" content="Humayun Tanwar">
-<meta property="og:description" content="Integration Team Lead, EMEA at NomuPay. A short letter.">
 <meta property="og:image" content="https://humayuntanwar.com/og.png">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400&family=La+Belle+Aurore&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Instrument+Sans:wght@400;500;600&family=La+Belle+Aurore&display=swap">
 <style>
-/* One sheet of paper under the Dubai sky. No menu, no buttons: links are underlined words in the sentences. */
-:root{
-  --sky-a:#0B1026; --sky-b:#1B2145; --sky-ink:#AEB6DA;
-  --paper:#F5F5F1; --ink:#1B1B1F; --ink-soft:#5A5A63; --pen:#1F3FBF; --fold:rgba(20,20,40,.055);
-  --serif:'Literata', Georgia, 'Times New Roman', serif;
-  --hand:'La Belle Aurore', 'Segoe Script', 'Bradley Hand', cursive;
-  color-scheme:light;
-}
-:root[data-sky="dawn"]{--sky-a:#F2B38C;--sky-b:#8FA6CF;--sky-ink:#2B2F4A}
-:root[data-sky="day"]{--sky-a:#BFD6EA;--sky-b:#E8EEF2;--sky-ink:#3A4658}
-:root[data-sky="dusk"]{--sky-a:#3A2F5E;--sky-b:#D98A6A;--sky-ink:#F4E6DC}
+/* A portrait page. The photo's studio backdrop becomes the page itself; beside it, a name, four lines and a signature. */
+:root{--bg:#E9DEDA;--ink:#141211;--soft:#6F625D;--rule:rgba(20,18,17,.16);
+  --display:'Bodoni Moda','Didot','Bodoni MT',Georgia,serif;--text:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;--hand:'La Belle Aurore','Segoe Script','Bradley Hand',cursive;color-scheme:light}
 *{box-sizing:border-box}
-html{background:var(--sky-a)}
-body{margin:0;min-height:100vh;min-height:100svh;background:linear-gradient(180deg,var(--sky-a),var(--sky-b));background-attachment:fixed;color:var(--ink);font-family:var(--serif);font-size:19px;line-height:1.62;-webkit-font-smoothing:antialiased;
-  padding:max(40px,6vh) max(14px, env(safe-area-inset-right, 0px)) max(40px,6vh) max(14px, env(safe-area-inset-left, 0px))}
-.sheet{position:relative;max-width:700px;margin:0 auto;background:var(--paper);padding:clamp(34px,7vw,76px) clamp(24px,7vw,80px) clamp(40px,7vw,72px);
-  box-shadow:0 1px 1px rgba(0,0,0,.12),0 18px 50px rgba(0,0,0,.28);transform:rotate(-.35deg);
-  background-image:linear-gradient(180deg,transparent calc(33.3% - 1px),var(--fold) 33.3%,transparent calc(33.3% + 2px)),linear-gradient(180deg,transparent calc(66.6% - 1px),var(--fold) 66.6%,transparent calc(66.6% + 2px))}
-.date{margin:0 0 2.2em;font-style:italic;color:var(--ink-soft);font-size:.92em}
-p{margin:0 0 1.15em;text-wrap:pretty;hanging-punctuation:first}
-.hello{font-size:1.18em;margin-bottom:.9em}
-a{color:inherit;text-decoration:underline;text-decoration-color:var(--pen);text-decoration-thickness:1.5px;text-underline-offset:3px}
-a:hover{color:var(--pen)}
-a:focus-visible{outline:2px solid var(--pen);outline-offset:3px;border-radius:2px}
-.photo{float:right;position:relative;width:150px;margin:-6px -18px 14px 26px;padding:7px 7px 9px;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.2),0 8px 18px rgba(0,0,0,.16);transform:rotate(3.2deg)}
-.photo img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 8%}
-.photo svg{position:absolute;top:-20px;left:22px;width:26px;height:58px}
-.sign{margin:1.9em 0 0}
-.sig{display:block;font-family:var(--hand);font-size:2.5em;line-height:1.1;color:var(--pen);transform:rotate(-3deg);transform-origin:left;margin:.1em 0 .15em -.05em}
-.name{font-size:.86em;color:var(--ink-soft)}
-.ps{margin:2.4em 0 0;padding-top:1.3em;border-top:1px solid rgba(20,20,40,.12);font-size:.92em;color:var(--ink-soft)}
-.ps b{font-weight:500;color:var(--ink)}
-.out{max-width:700px;margin:26px auto 0;text-align:center;font-size:13px;letter-spacing:.08em;color:var(--sky-ink)}
-@media (max-width:560px){
-  body{font-size:17.5px}
-  .sheet{transform:none}
-  .photo{width:104px;margin:-2px -6px 10px 16px;padding:5px 5px 7px}
-  .photo svg{top:-16px;left:14px;width:21px;height:46px}
+html,body{margin:0;background:var(--bg);color:var(--ink)}
+body{font-family:var(--text);-webkit-font-smoothing:antialiased}
+.page{min-height:100vh;min-height:100svh;display:grid;grid-template-columns:minmax(0,46fr) minmax(0,54fr)}
+.portrait{position:relative;min-height:100svh;overflow:hidden}
+.portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 12%;display:block}
+.portrait::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 62%,var(--bg) 100%),linear-gradient(180deg,rgba(233,222,218,.55) 0%,transparent 16%)}
+.body{display:flex;flex-direction:column;justify-content:center;gap:clamp(28px,5vh,56px);padding:clamp(40px,8vh,96px) max(24px,6vw,env(safe-area-inset-right,0px)) clamp(40px,8vh,96px) clamp(24px,4vw,64px);min-width:0}
+h1{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(56px,7.6vw,132px);line-height:.88;letter-spacing:-.02em}
+h1 i{font-style:italic}
+.now{margin:18px 0 0;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--soft)}
+ol{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink);max-width:640px}
+li{display:grid;grid-template-columns:8.2em minmax(0,1fr);gap:20px;align-items:baseline;padding:15px 0;border-bottom:1px solid var(--rule);font-size:clamp(16px,1.35vw,19px);color:var(--soft)}
+li time{font-size:.82em;font-weight:500;letter-spacing:.08em;font-variant-numeric:tabular-nums;white-space:nowrap}
+li span b{font-weight:500;color:var(--ink)}
+li.cur{color:var(--ink)} li.cur span b{font-weight:600}
+li.cur time::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--ink);margin-right:9px;vertical-align:1px}
+.sig{font-family:var(--hand);font-size:clamp(44px,4.6vw,68px);line-height:1;color:var(--ink);transform:rotate(-4deg);transform-origin:left;margin:-4px 0 0}
+.home{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--soft);text-decoration:none;align-self:flex-start;display:inline-flex;align-items:center;min-height:44px;margin-top:-14px}
+.home:hover{color:var(--ink)}
+.home:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+@media (max-width:760px){
+  .page{grid-template-columns:minmax(0,1fr)}
+  .portrait{min-height:0;height:62svh}
+  .portrait::after{background:linear-gradient(180deg,transparent 70%,var(--bg) 100%)}
+  .body{padding:8px 22px 36px;gap:28px;justify-content:flex-start}
+  h1{font-size:clamp(52px,16vw,76px);margin-top:-34px;position:relative}
+  li{grid-template-columns:6.6em minmax(0,1fr);gap:14px;padding:13px 0}
 }
-@media print{html,body{background:#fff}.sheet{box-shadow:none;transform:none}.out{display:none}}
 </style>
 </head>
 <body>
-<main class="sheet">
-  <figure class="photo">
-    <svg viewBox="0 0 26 58" fill="none" stroke="#8C9099" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M8 20V44a5.5 5.5 0 0 0 11 0V12a8 8 0 0 0-16 0v34"/></svg>
-    <img src="../me.jpg" alt="Humayun Tanwar" width="900" height="1200">
-  </figure>
-
-  <p class="date"><span id="when">Dubai</span></p>
-
-  <p class="hello">Hello,</p>
-
-  <p>I'm Humayun. I lead the integration team for EMEA at NomuPay, a payments company, from Dubai.</p>
-
-  <p>I started out as an Android developer at Access Group in Karachi, building banking apps. In 2020 I moved to Dubai to join Magnati, the payments arm of First Abu Dhabi Bank, as Integrations &amp; Platforms Lead.</p>
-
-  <p>In 2022 I joined NomuPay as Integration Lead. I took on Asia along the way, and today I lead integrations across EMEA.</p>
-
-  <p class="sign">
-    <span class="sig" aria-hidden="true">Humayun</span>
-    <span class="name">Humayun Tanwar · Integration Team Lead, EMEA · NomuPay</span>
-  </p>
+<main class="page">
+  <div class="portrait"><img src="../me.jpg" alt="Humayun Tanwar" width="900" height="1200"></div>
+  <div class="body">
+    <header>
+      <h1>Humayun<br><i>Tanwar</i></h1>
+      <p class="now">Dubai · Payments</p>
+    </header>
+    <ol>
+      <li class="cur"><time>2026 – Now</time><span><b>EMEA Lead, Integrations</b> · NomuPay</span></li>
+      <li><time>2022 – 2026</time><span><b>Integration Lead</b> · NomuPay</span></li>
+      <li><time>2020 – 2022</time><span><b>Integrations &amp; Platforms Lead</b> · Magnati</span></li>
+      <li><time>2018 – 2020</time><span><b>Android Developer</b> · Access Group</span></li>
+    </ol>
+    <p class="sig" aria-hidden="true">Humayun</p>
+    <a class="home" href="/">humayuntanwar.com</a>
+  </div>
 </main>
-<p class="out"><a href="/" style="color:inherit;text-decoration:none">humayuntanwar.com</a></p>
-
-<script>
-(function(){
-  try {
-    var now = new Date(), tz = 'Asia/Dubai';
-    var day = new Intl.DateTimeFormat('en-GB', { timeZone: tz, weekday: 'long', day: 'numeric', month: 'long' }).format(now);
-    var time = new Intl.DateTimeFormat('en-US', { timeZone: tz, hour: 'numeric', minute: '2-digit' }).format(now).toLowerCase();
-    var h = +new Intl.DateTimeFormat('en-GB', { timeZone: tz, hour: 'numeric', hourCycle: 'h23' }).format(now);
-    document.getElementById('when').textContent = 'Dubai, ' + day + ', ' + time;
-    var sky = h < 5 ? 'night' : h < 7 ? 'dawn' : h < 17 ? 'day' : h < 19 ? 'dusk' : 'night';
-    if (sky !== 'night') document.documentElement.setAttribute('data-sky', sky);
-  } catch (e) {}
-})();
-</script>
 </body>
 </html>
